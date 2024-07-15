@@ -71,8 +71,7 @@ describe('API-Cypress Practice01', () => {
       url: `${Cypress.env('baseURL')}/${id}`,
     }).then((response) => {
       expect(response.status).to.equal(200)
-      expect(response.body).to.eq(`Successfully deleted user 
-with Id: ${postRequestBody.STUDENT_ID}`)
+      expect(response.body.message).to.eq(`Successfully deleted user with Id: ${id}`)
     })
   })
 })
